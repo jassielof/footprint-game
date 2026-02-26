@@ -1,0 +1,9 @@
+*.exe
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+*.class
+__pycache__/
+*.pdb
