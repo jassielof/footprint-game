@@ -1,5 +1,3 @@
-// Run with:
-// zig build-exe -O ReleaseSmall main.zig
 const std = @import("std");
 
 pub fn main() void {

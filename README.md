@@ -9,6 +9,13 @@
 - **Output destination:** Standard output (`stdout`) only, not standard error (`stderr`).
 - **Size measurement:** Measured via Python's `os.path.getsize()` for cross-platform consistency.
 
+Other than that, regarding logic or implementation:
+
+- It should be labeled respectively when:
+  - Using system calls or not
+  - Using assembly or not
+  - Linking or not (static or dynamic)
+
 Everything is allowed.
 
 ## Languages
@@ -92,13 +99,14 @@ For any type of scripting or automation, Python will be used, to not introduce l
 
 Jupyter will be used for all the insights. And it'll be exported to HTML for GitHub Pages.
 
-## Metadata schema
+## Metadata/labels
 
-- Language
-- Compiler
-- Method
-- Uses system calls?
-- OS
-- Uses assembly?
-- Linking
+Every attempt should be labeled with the following metadata:
+
+- Language: C, Rust, Go, etc.
+- Compiler/toolchain: GCC, Clang, MSVC, Zig, Rustc, etc.
+- Method: As mentioned in the rules
+- OS: Linux, Windows, MacOS
+  - Version: Latest, LTS, etc.
+- Build mode or optimization level: Debug, Release, etc.
 - Notes
