@@ -20,15 +20,10 @@ ENV PATH="/root/.bun/bin:${PATH}"
 RUN bun --version
 RUN bunx --version
 
-RUN curl -o- https://fnm.vercel.app/install | bash -s -- --install-dir /fnm
-ENV PATH="/fnm:${PATH}"
-RUN fnm --version
-RUN eval "$(fnm env)"
-RUN fnm install --latest
-ENV PATH="/fnm/versions/node/$(fnm current)/bin:${PATH}"
-RUN node --version
-RUN npm --version
-
+COPY --from=node:latest /usr/local/bin/node /usr/local/bin/node
+COPY --from=node:latest /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=node:latest /usr/local/bin/npm /usr/local/bin/npm
+COPY --from=node:latest /usr/local/bin/npx /usr/local/bin/npx
 COPY --from=php:latest /usr/local/bin/php /usr/local/bin/
 
 RUN https://dot.net/v1/dotnet-install.sh | bash -s -- --install-dir /dotnet
