@@ -26,7 +26,7 @@ COPY --from=node:latest /usr/local/bin/npm /usr/local/bin/npm
 COPY --from=node:latest /usr/local/bin/npx /usr/local/bin/npx
 COPY --from=php:latest /usr/local/bin/php /usr/local/bin/
 
-RUN https://dot.net/v1/dotnet-install.sh | bash -s -- --install-dir /dotnet
+RUN curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- --install-dir /dotnet 
 ENV DOTNET_ROOT=/dotnet
 ENV PATH="/dotnet/tools:${PATH}"
 ENV PATH="/dotnet:${PATH}"
