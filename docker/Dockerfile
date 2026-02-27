@@ -24,16 +24,30 @@ COPY --from=node:latest /usr/local/bin/node /usr/local/bin/node
 COPY --from=node:latest /usr/local/lib/node_modules /usr/local/lib/node_modules
 COPY --from=node:latest /usr/local/bin/npm /usr/local/bin/npm
 COPY --from=node:latest /usr/local/bin/npx /usr/local/bin/npx
+
 COPY --from=php:latest /usr/local/bin/php /usr/local/bin/
 
-RUN curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- --install-dir /dotnet 
-ENV DOTNET_ROOT=/dotnet
-ENV PATH="/dotnet/tools:${PATH}"
-ENV PATH="/dotnet:${PATH}"
+COPY --from=mcr.microsoft.com/dotnet/sdk:latest /usr/share/dotnet /usr/share/dotnet
+ENV DOTNET_ROOT=/usr/share/dotnet
+ENV PATH="${DOTNET_ROOT}:${PATH}"
 RUN dotnet --version
-RUN dotnet tool --help
+RUN dotnet --info
 
 RUN curl -fsSL https://install.julialang.org | sh
 RUN juliaup update
 RUN julia --version
 
+COPY --from=nimlang/nim:latest /opt/nim /opt/nim
+ENV PATH="/opt/nim/bin:${PATH}"
+RUN nim --version
+
+COPY --from=golang:latest /usr/local/go /usr/local/go
+ENV PATH="/usr/local/go/bin:${PATH}"
+RUN go version
+
+COPY --from=ruby:latest /usr/local /usr/local
+RUN ruby --version
+RUN gem --version
+
+COPY --from=haskell:latest /usr/local /usr/local
+RUN ghc --version
