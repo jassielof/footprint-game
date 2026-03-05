@@ -17,7 +17,7 @@ jobs:
       - uses: docker/setup-buildx-action@v3
 
       - name: Build toolchains
-        uses: docker/bake-action@v5
+        uses: docker/bake-action@v7
         with:
           files: docker/compose.yaml
           push: false
