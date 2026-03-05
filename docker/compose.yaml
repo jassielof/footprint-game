@@ -65,3 +65,7 @@ services:
   erlang:
     build:
       dockerfile: erlang.Dockerfile
+  llvm-base:
+    image: llvm-base:latest
+    build:
+      dockerfile: llvm-base.Dockerfile

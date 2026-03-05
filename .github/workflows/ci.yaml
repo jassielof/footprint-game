@@ -19,7 +19,7 @@ jobs:
       - name: Build toolchains
         uses: docker/bake-action@v5
         with:
-          files: docker/docker-bake.hcl
+          files: docker/compose.yaml
           push: false
           load: false
           set: |
