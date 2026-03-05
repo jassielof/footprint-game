@@ -1,0 +1,38 @@
+services:
+  deno:
+    build:
+      dockerfile: deno.Dockerfile
+  go:
+    build:
+      dockerfile: go.Dockerfile
+  uv:
+    build:
+      dockerfile: uv.Dockerfile
+  php:
+    build:
+      dockerfile: php.Dockerfile
+  node:
+    build:
+      dockerfile: node.Dockerfile
+  bun:
+    build:
+      dockerfile: bun.Dockerfile
+  dotnet:
+    build:
+      dockerfile: dotnet.Dockerfile
+  julia:
+    build:
+      dockerfile: julia.Dockerfile
+  rust:
+    build:
+      dockerfile: rust.Dockerfile
+  haskell:
+    build:
+      dockerfile: haskell.Dockerfile
+  ruby:
+    build:
+      dockerfile: ruby.Dockerfile
+  nim:
+    build:
+      dockerfile: nim.Dockerfile
+      

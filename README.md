@@ -9,14 +9,15 @@
 - **Output destination:** Standard output (`stdout`) only, not standard error (`stderr`).
 - **Size measurement:** Measured via Python's `os.path.getsize()` for cross-platform consistency.
 
-Other than that, regarding logic or implementation:
+Other than that, regarding logic, implementation, or design:
 
 - It should be labeled respectively when:
   - Using system calls or not
   - Using assembly or not
   - Linking or not (static or dynamic)
+  - Or any other relevant method that drastically reduces footprint and isn't unique to the toolchain/language (as for example, system calls).
 
-Everything is allowed.
+Everything else is allowed.
 
 ## Languages
 
