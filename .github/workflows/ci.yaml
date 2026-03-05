@@ -12,9 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: docker/setup-buildx-action@v3
-      # - uses: docker/build-push-action@v6
-        # with:
-        #   context: docker/
-        #   push: false
-        #   tags: footprint-game
       - run: docker compose -f docker/compose.yaml build --parallel

@@ -35,4 +35,33 @@ services:
   nim:
     build:
       dockerfile: nim.Dockerfile
-      
+  zig:
+    build:
+      dockerfile: zig.Dockerfile
+  gcc:
+    build:
+      dockerfile: gcc.Dockerfile
+  swift:
+    build:
+      dockerfile: swift.Dockerfile
+  clang:
+    build:
+      dockerfile: clang.Dockerfile
+  msvc:
+    build:
+      dockerfile: msvc.Dockerfile
+  c3:
+    build:
+      dockerfile: c3.Dockerfile
+  odin:
+    build:
+      dockerfile: odin.Dockerfile
+  gleam:
+    build:
+      dockerfile: gleam.Dockerfile
+  elixir:
+    build:
+      dockerfile: elixir.Dockerfile
+  erlang:
+    build:
+      dockerfile: erlang.Dockerfile
